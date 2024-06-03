@@ -10,13 +10,14 @@ const NavBar = () => {
 
         <div className={" container py-[20] flex items-center justify-between"}>
             <img src={assets.food_logo} alt="" className={"w-[100px] h-[100px]"}/>
-            <ul className={"flex gap-[20px] text-[#49557e] text-[14px] cursor-pointer "}>
+
+            <ul className={" gap-[20px] text-[#49557e] text-[14px] cursor-pointer hidden  md:flex"}>
                 <li onClick={()=>setMenu("home")}   className={menu=="home" ? "active" :""} >home</li>
                 <li onClick={()=>setMenu("menu")}  className={menu=="menu" ? "active" :""}>menu</li>
                 <li onClick={()=>setMenu("mobile-app")}  className={menu=="mobile-app" ? "active" :""}>mobile-app</li>
                 <li onClick={()=>setMenu("contact-us")}  className={menu=="contact-us" ? "active" :""}>contact-us</li>
             </ul>
-            <div className={"flex  items-center gap-[20px]"}>
+            <div className={"md:flex  items-center gap-[20px] hidden"}>
                 <img src={assets.search_icon} alt=""/>
                 <div className={"relative "}>
                     <img src={assets.basket_icon} alt=""/>

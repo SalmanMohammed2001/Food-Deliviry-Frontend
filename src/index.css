@@ -29,7 +29,7 @@
     @apply border-black border-2 border-solid
   }
   .header{
-    @apply bg-[url('./assets/images/mask.png')] bg-no-repeat bg-center bg-cover w-full h-[100px] leading-[100px]
+    @apply bg-[url('./assets/pasta_image.jpg')] bg-no-repeat  bg-cover h-[34vw] rounded-md
   }
   .hero_section{
     @apply bg-[url('./assets/images/hero-bg.png')] bg-no-repeat bg-center bg-cover
@@ -49,22 +49,22 @@
   }
 
 }
-@media only screen and(max-width: 1024px) {
-  .container{
-    @apply w-full
-  }
-  section{
-    @apply py-[35px]
-  }
-}
-@media only screen and(max-width: 768px) {
-  .container{
-    @apply text-[26px] leading-[36px]
-  }
-  section{
-    @apply py-[35px]
-  }
-  .text_para{
-    @apply text-[16px] leading-7 mt-3
-  }
-}
+/*@media only screen and(max-width: 1024px) {*/
+/*  .container{*/
+/*    @apply w-full*/
+/*  }*/
+/*  section{*/
+/*    @apply py-[35px]*/
+/*  }*/
+/*}*/
+/*@media only screen and(max-width: 768px) {*/
+/*  .container{*/
+/*    @apply text-[26px] leading-[36px]*/
+/*  }*/
+/*  section{*/
+/*    @apply py-[35px]*/
+/*  }*/
+/*  .text_para{*/
+/*    @apply text-[16px] leading-7 mt-3*/
+/*  }*/
+/*}*/
