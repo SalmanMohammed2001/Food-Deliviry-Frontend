@@ -2,6 +2,7 @@
 // @ts-ignore
 import  {menu_list} from "../../assets/assets";
 
+// @ts-ignore
 const ExploreMenu=({category,setCategory})=>{
     return(
         <div className={"explore-menu my-[20px] flex flex-col gap-[20px] "} id={'explore-menu'}>
