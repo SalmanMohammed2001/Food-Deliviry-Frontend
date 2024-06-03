@@ -9,6 +9,8 @@ import PlaceOrder from "./pages/PlaceOrder/PlacerOrder.tsx";
 function App() {
 
 
+
+
   return (
         <div className={'app'}>
           <NavBar/>

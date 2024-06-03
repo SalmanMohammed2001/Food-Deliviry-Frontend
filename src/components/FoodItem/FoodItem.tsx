@@ -1,12 +1,16 @@
 // @ts-ignore
 import {assets} from "../../assets/assets";
-import {useState} from "react";
+
+import {StoreContext} from "../../context/StoreContext.tsx";
+import {useContext} from "react";
 
 // @ts-ignore
 const FoodItem=({id,name,price,description,image})=>{
 
-    const[itemCount,setItemCount]=useState(0)
+   // const[itemCount,setItemCount]=useState(0)
 
+    // @ts-ignore
+    const{  cartItems, addToCart, removeFromCart} =useContext(StoreContext)
 
 
     return(
@@ -15,12 +19,12 @@ const FoodItem=({id,name,price,description,image})=>{
             <div className={"food-item-img-container relative "}>
                 <img className={"food-item-img w-[100%]  rounded-t-md  "} src={image} alt=""/>
                 {
-                    !itemCount ?
-                        <img className={"add w-[35px] rounded-[50%]  absolute bottom-[15px] right-[15px] cursor-pointer "} onClick={()=>setItemCount(pre=>pre+1)} src={assets.add_icon_white} alt=""/>:
+                    !cartItems[id] ?
+                        <img className={"add w-[35px] rounded-[50%]  absolute bottom-[15px] right-[15px] cursor-pointer "} onClick={()=>addToCart(id)} src={assets.add_icon_white} alt=""/>:
                         <div className={"food-item-counter absolute bottom-[15px] right-[15px] flex gap-[10px] p-[6px] rounded-[50px] bg-white"}>
-                            <img className={"w-[30px]"} onClick={() => setItemCount(pre => pre - 1)} src={assets.remove_icon_red} alt=""/>
-                            <p>{itemCount}</p>
-                            <img className={"w-[30px]"} onClick={() => setItemCount(pre => pre + 1)} src={assets.add_icon_green} alt=""/>
+                            <img className={"w-[30px]"} onClick={() => removeFromCart(id)} src={assets.remove_icon_red} alt=""/>
+                            <p>{cartItems[id]}</p>
+                            <img className={"w-[30px]"} onClick={() => addToCart(id)} src={assets.add_icon_green} alt=""/>
                         </div>
                 }
             </div>

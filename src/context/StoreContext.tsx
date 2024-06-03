@@ -1,4 +1,4 @@
-import {createContext, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 // @ts-ignore
 import {food_list} from "../assets/assets";
 
@@ -26,6 +26,13 @@ const StoreContextProvider = ({children}) => {
     }
 
 
+
+
+    useEffect(()=>{
+        console.log(cartItems)
+    },[cartItems])
+
+
     const contextValue = {
         food_list,
         cartItems,
@@ -34,6 +41,7 @@ const StoreContextProvider = ({children}) => {
         removeFromCart
 
     }
+    // @ts-ignore
     // @ts-ignore
     return (
         <StoreContext.Provider value={contextValue}>
