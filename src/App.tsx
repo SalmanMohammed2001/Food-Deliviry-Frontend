@@ -1,11 +1,14 @@
 
 import './App.css'
+import NavBar from "./components/navbar/NavBar.tsx";
 
 function App() {
 
 
   return (
-        <div><h1></h1></div>
+        <div className={'app'}>
+          <NavBar/>
+        </div>
   )
 }
 
