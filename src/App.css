@@ -25,3 +25,21 @@ a{
 .header-text{
     font-size: max(3.5vw,22px);
 }
+
+.header-content{
+    animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+.explore-menu-list::-webkit-scrollbar{
+    display: none;
+}
