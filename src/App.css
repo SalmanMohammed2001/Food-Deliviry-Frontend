@@ -43,3 +43,7 @@ a{
 .explore-menu-list::-webkit-scrollbar{
     display: none;
 }
+.food-item{
+    animation: fadeIn 1s;
+    transition: 0.3s;
+}
