@@ -1,8 +1,9 @@
+// @ts-ignore
 import {assets} from "../../assets/assets";
 
 const Footer = () => {
     return (
-        <div className={"footer text-[#d9d9d9] bg-[#323232] flex gap-[20px] flex-col items-center py-[20px] px-[8vw] pt-[80px] mt-[100px] "}>
+        <div className={"footer text-[#d9d9d9] bg-[#323232] flex gap-[20px] flex-col items-center py-[20px] px-[8vw] pt-[80px] mt-[100px] "} id={'footer'}>
             <div className={"footer-content w-[100%] grid md:grid-cols-2 lg:grid-cols-3 gap-[80px] mb-0 "}>
                 <div className={"footer-content-left   "}>
                     <img src={assets.food_logo} alt=""/>

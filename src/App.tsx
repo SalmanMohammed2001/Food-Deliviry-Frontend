@@ -6,16 +6,21 @@ import Home from "./pages/Home/Home.tsx";
 import Cart from "./pages/Cart/Cart.tsx";
 import PlaceOrder from "./pages/PlaceOrder/PlacerOrder.tsx";
 import Footer from "./components/Footer/Footer.tsx";
+import {useState} from "react";
+import LoginPopup from "./components/LoginPopup/LoginPopup.tsx";
 
 function App() {
+
+    const[showLogin,setShowLogin]=useState(false)
 
 
 
 
   return (
       <>
+          {showLogin? <LoginPopup/> :<></>}
           <div className={'app'}>
-              <NavBar/>
+              <NavBar setShowLogin={setShowLogin} />
               <Routes>
                   <Route path={"/"} element={<Home/>}/>
                   <Route path={"/cart"} element={<Cart/>}/>
@@ -23,7 +28,8 @@ function App() {
               </Routes>
           </div>
           <Footer/>
-      </>
+
+          </>
 
 
   )

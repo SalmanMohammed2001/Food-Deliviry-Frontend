@@ -5,7 +5,7 @@ import  {menu_list} from "../../assets/assets";
 // @ts-ignore
 const ExploreMenu=({category,setCategory})=>{
     return(
-        <div className={"explore-menu my-[20px] flex flex-col gap-[20px] "} id={'explore-menu'}>
+        <div className={"explore-menu my-[20px] flex flex-col gap-[20px] "} id={'explore-menu'} >
                 <h1 className={"text-[24px] text-[#262626] font-bold "}>Explore Menu</h1>
             <p className={"explore-menu-text  md:max-w-[60%]  text-[#808080] "}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid distinctio dolor necessitatibus voluptatem. Assumenda autem, corporis deserunt earum facilis illum</p>
             <div className={"explore-menu-list flex justify-between items-center gap-[30px] text-center  my-[20px] overflow-x-scroll "}>
