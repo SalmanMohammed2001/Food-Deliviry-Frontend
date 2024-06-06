@@ -44,6 +44,38 @@ const Cart=()=>{
 
             </div>
 
+            <div className="cart-bottom mt-[80px] flex justify-between gap-[100px]">
+                <div className="cart-total flex-1 flex flex-col gap-[20px] ">
+                    <h2>Cart Total</h2>
+                    <div>
+                        <div className="cart-total-details  flex justify-between text-[#555] " >
+                            <p>Subtotal</p>
+                            <p>{0}</p>
+                        </div>
+                        <hr className={"my-[10px]"}/>
+                        <div className="cart-total-details  flex justify-between text-[#555] " >
+                            <p>Delivery</p><p>{2}</p>
+                        </div>
+                        <hr className={"my-[10px]"}/>
+                        <div className="cart-total-details  flex justify-between text-[#555] " >
+                            <p>Total</p>
+                            <p>{0}</p>
+                        </div>
+
+                    </div>
+                    <button className={"cart-total-button border-none text-white bg-orange-600  ]"}>PROCEED To CHECKED</button>
+                </div>
+                <div className="cart-promocode  flex-1">
+                    <div>
+                        <p className={"text-[#555] "}>If You Have a promo code ,Enter it Here</p>
+                        <div className={"cart-promocode-input mt-[10px] flex justify-between items-center bg-[#eceaea]"}>
+                            <input className={"bg-transparent border-none outline-none pl-[10px] "} type="text" placeholder={"promo code"}/>
+                            <button className={"w-[10vw] w-[150px] py-[12px] px-[5px] border-none text-white bg-black rounded-md"}>submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     )
 }

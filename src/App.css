@@ -89,6 +89,12 @@ a{
     margin: 10px 0;
     color: black;
 }
+.cart-total-button{
+    width: max(15vw,200px);
+    padding: 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 /*=====================================*/
 @media (max-width: 1050px) {
@@ -149,6 +155,12 @@ a{
 
     .navbar-menu{
         display: none;
+    }
+    .cart-bottom{
+        flex-direction: column-reverse;
+    }
+    .cart-promocode{
+        justify-content: start;
     }
 
 
