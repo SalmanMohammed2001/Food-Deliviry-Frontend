@@ -52,6 +52,45 @@ a{
     transform: scale(1.05);
 }
 
+
+
+
+/*=========login popup*/
+.login-popup-container{
+    place-self: center;
+    width: max(23vw,330px);
+    color: #808080;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 30px ;
+    border-radius: 14px;
+    animation: fadeIn 0.5s;
+}
+
+
+/*=========login popup*/
+
+
+
+/*=========cart============================*/
+
+.cart-item-title{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+    align-items: center;
+    color: grey;
+    font-size: max(1vw,12px);
+}
+
+
+.cart-item-item{
+    margin: 10px 0;
+    color: black;
+}
+
+/*=====================================*/
 @media (max-width: 1050px) {
     .navbar .logo{
         width: 140px;
