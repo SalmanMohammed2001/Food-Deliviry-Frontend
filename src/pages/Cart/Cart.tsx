@@ -62,12 +62,13 @@ const Cart = () => {
                         </div>
                         <hr className={"my-[10px]"}/>
                         <div className="cart-total-details  flex justify-between text-[#555] " >
-                            <p>Delivery</p><p>${2}</p>
+                            <p>Delivery</p>
+                            <p>${getTotalAmount()==0?0: 2}</p>
                         </div>
                         <hr className={"my-[10px]"}/>
-                        <div className="cart-total-details  flex justify-between text-[#555] " >
+                        <div className="cart-total-details  flex justify-between text-[#555] ">
                             <p>Total</p>
-                            <p>${getTotalAmount()+2}</p>
+                            <p>${getTotalAmount() == 0 ? 0 : getTotalAmount() + 2}</p>
                         </div>
 
                     </div>
