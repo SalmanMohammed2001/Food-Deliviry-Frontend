@@ -1,12 +1,16 @@
 // @ts-ignore
 import {assets} from '../../assets/assets.js'
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {Link} from "react-router-dom";
+import {StoreContext} from "../../context/StoreContext.tsx";
 
 // @ts-ignore
 const NavBar = ({setShowLogin}) => {
 
     const [menu,setMenu]=useState("home");
+
+    // @ts-ignore
+    const {getTotalAmount}=useContext(StoreContext)
 
     return (
 
@@ -23,7 +27,7 @@ const NavBar = ({setShowLogin}) => {
                 <img className={""} src={assets.search_icon} alt=""/>
                 <div className={"relative  nav-bar-search-icon"}>
                  <Link to={'/cart'}>   < img src={assets.basket_icon} alt=""/> </Link>
-                    <div className={" dot absolute min-w-[10px] min-h-[10px] bg-orange-600  rounded-[50px] top-[-8px] right-[-8px]"}></div>
+                    <div className={getTotalAmount()===0? "" :" dot absolute min-w-[10px] min-h-[10px] bg-orange-600  rounded-[50px] top-[-8px] right-[-8px]"}></div>
                 </div>
                 <button onClick={()=>setShowLogin(true)}
                     className={ "transition-all ease-in-out bg-transparent text-[16px] color-[#49557e]  bd border-orange-600 py-[10px] px-[30px] rounded-[50px]  cursor-pointer hover:bg-[#fff4f2] hover:text-orange-400" }>sign

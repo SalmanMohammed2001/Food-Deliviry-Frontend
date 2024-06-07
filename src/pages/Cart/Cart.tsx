@@ -1,13 +1,15 @@
-import {useContext} from "react";
-import  {StoreContext} from "../../context/StoreContext.tsx";
+import {JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useContext} from "react";
+import {StoreContext} from "../../context/StoreContext.tsx";
+import {useNavigate} from "react-router-dom";
 
 
-const Cart=()=>{
+const Cart = () => {
 
-    const {cartItems,food_list,removeFromCart}=useContext(StoreContext)
+    const {cartItems, food_list, removeFromCart, getTotalAmount} = useContext(StoreContext)
 
+    const navigate =useNavigate();
 
-    return(
+    return (
         <div className={"cart mt-[100px]"}>
             <div className="cart-items">
                 <div className="cart-item-title ">
@@ -22,8 +24,14 @@ const Cart=()=>{
                 <br/>
 
                 {
-                    food_list.map((item,index)=>{
+                    food_list.map((item: {
+                        _id: string | number;
+                        image: string | undefined;
+                        name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined;
+                        price: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined;
+                    }, index: Key | null | undefined)=>{
                         if(cartItems[item._id]>0){
+
                             return (
                                 <div>
                                 <div key={index} className={"cart-item-title cart-item-item my-[10px] text-black"}>
@@ -50,20 +58,20 @@ const Cart=()=>{
                     <div>
                         <div className="cart-total-details  flex justify-between text-[#555] " >
                             <p>Subtotal</p>
-                            <p>{0}</p>
+                            <p>${getTotalAmount()}</p>
                         </div>
                         <hr className={"my-[10px]"}/>
                         <div className="cart-total-details  flex justify-between text-[#555] " >
-                            <p>Delivery</p><p>{2}</p>
+                            <p>Delivery</p><p>${2}</p>
                         </div>
                         <hr className={"my-[10px]"}/>
                         <div className="cart-total-details  flex justify-between text-[#555] " >
                             <p>Total</p>
-                            <p>{0}</p>
+                            <p>${getTotalAmount()+2}</p>
                         </div>
 
                     </div>
-                    <button className={"cart-total-button border-none text-white bg-orange-600  ]"}>PROCEED To CHECKED</button>
+                    <button onClick={()=>navigate('/order')} className={"cart-total-button border-none text-white bg-orange-600  ]"}>PROCEED To CHECKED</button>
                 </div>
                 <div className="cart-promocode  flex-1">
                     <div>
