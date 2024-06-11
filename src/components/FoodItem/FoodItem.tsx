@@ -10,14 +10,14 @@ const FoodItem=({id,name,price,description,image})=>{
    // const[itemCount,setItemCount]=useState(0)
 
     // @ts-ignore
-    const{  cartItems, addToCart, removeFromCart} =useContext(StoreContext)
+    const{  cartItems, addToCart, removeFromCart,url} =useContext(StoreContext)
 
 
     return(
         <div className={"food-item w-[100%] m-auto rounded-[15px]  shadow-md"}>
 
             <div className={"food-item-img-container relative "}>
-                <img className={"food-item-img w-[100%]  rounded-t-md  "} src={image} alt=""/>
+                <img className={"food-item-img w-[100%]  rounded-t-md  "} src={url+"/images/"+image} alt=""/>
                 {
                     !cartItems[id] ?
                         <img className={"add w-[35px] rounded-[50%]  absolute bottom-[15px] right-[15px] cursor-pointer "} onClick={()=>addToCart(id)} src={assets.add_icon_white} alt=""/>:
