@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer.tsx";
 import {useState} from "react";
 import LoginPopup from "./components/LoginPopup/LoginPopup.tsx";
 import Verify from "./pages/verify/Verify.tsx";
+import MyOrder from "./pages/MyOrders/MyOrder.tsx";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
                   <Route path={"/cart"} element={<Cart/>}/>
                   <Route path={"/order"} element={<PlaceOrder/>}/>
                   <Route path={"/verify"} element={<Verify/>}/>
+                  <Route path={"/myOrders"} element={<MyOrder/>}/>
               </Routes>
           </div>
           <Footer/>

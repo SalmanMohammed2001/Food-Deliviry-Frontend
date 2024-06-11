@@ -28,7 +28,7 @@ const Verify = () => {
         verifyPayment().then()
     },[])
 
-    console.log(success, orderId)
+
     return (
 
         <div className={"verify min-h-[60vh] grid"}>
