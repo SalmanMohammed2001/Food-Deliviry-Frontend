@@ -5,10 +5,11 @@ import {useNavigate} from "react-router-dom";
 
 const Cart = () => {
 
-    const {cartItems, food_list, removeFromCart, getTotalAmount} = useContext(StoreContext)
+    const {cartItems, food_list, removeFromCart, getTotalAmount,url} = useContext(StoreContext)
 
     const navigate =useNavigate();
 
+    console.log(cartItems.item)
     return (
         <div className={"cart mt-[100px]"}>
             <div className="cart-items">
@@ -30,12 +31,14 @@ const Cart = () => {
                         name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined;
                         price: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined;
                     }, index: Key | null | undefined)=>{
+
                         if(cartItems[item._id]>0){
 
+
                             return (
-                                <div>
-                                <div key={index} className={"cart-item-title cart-item-item my-[10px] text-black"}>
-                                    <img src={item.image} alt="" className={"w-[50px]"}/>
+                                <div key={index}>
+                                <div  className={"cart-item-title cart-item-item my-[10px] text-black"}>
+                                    <img src={url+"/images/"+item.image} alt="" className={"w-[50px]"}/>
                                     <p>{item.name}</p>
                                     <p>${item.price}</p>
                                     <p>{cartItems[item._id]}</p>
@@ -50,8 +53,8 @@ const Cart = () => {
                     })
                 }
 
-            </div>
 
+            </div>
             <div className="cart-bottom mt-[80px] flex justify-between gap-[100px]">
                 <div className="cart-total flex-1 flex flex-col gap-[20px] ">
                     <h2>Cart Total</h2>
