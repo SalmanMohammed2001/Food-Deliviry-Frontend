@@ -8,6 +8,7 @@ import PlaceOrder from "./pages/PlaceOrder/PlacerOrder.tsx";
 import Footer from "./components/Footer/Footer.tsx";
 import {useState} from "react";
 import LoginPopup from "./components/LoginPopup/LoginPopup.tsx";
+import Verify from "./pages/verify/Verify.tsx";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
                   <Route path={"/"} element={<Home/>}/>
                   <Route path={"/cart"} element={<Cart/>}/>
                   <Route path={"/order"} element={<PlaceOrder/>}/>
+                  <Route path={"/verify"} element={<Verify/>}/>
               </Routes>
           </div>
           <Footer/>
