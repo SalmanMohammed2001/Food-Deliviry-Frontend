@@ -1,4 +1,4 @@
-import {createContext, useEffect, useState} from "react";
+import {createContext, useState} from "react";
 // @ts-ignore
 import {food_list} from "../assets/assets";
 
@@ -9,6 +9,7 @@ const StoreContextProvider = ({children}) => {
 
     const [cartItems, setCartItems] = useState({})
 
+    const url="http://localhost:4000";
     const addToCart = (itemId: string | number) => {
 
         // @ts-ignore
@@ -27,9 +28,7 @@ const StoreContextProvider = ({children}) => {
 
 
     const getTotalAmount=()=>{
-
         let totalAmount=0;
-
         for(const item in cartItems){
             let itemInfo= food_list.find((product: { _id: any; })=> product._id === item);
             // @ts-ignore
@@ -42,9 +41,6 @@ const StoreContextProvider = ({children}) => {
 
 
 
-    // useEffect(()=>{
-    //     console.log(cartItems)
-    // },[cartItems])
 
 
     const contextValue = {
@@ -53,7 +49,8 @@ const StoreContextProvider = ({children}) => {
         setCartItems,
         addToCart,
         removeFromCart,
-        getTotalAmount
+        getTotalAmount,
+        url
 
     }
     // @ts-ignore
