@@ -5,7 +5,7 @@ import {StoreContext} from "../../context/StoreContext.tsx";
 const PlaceOrder=()=>{
 
     // @ts-ignore
-    const { getTotalAmount,token,food_list,setCartItems,url} = useContext(StoreContext)
+    const { getTotalAmount,token,food_list,setCartItems,url,cartItems} = useContext(StoreContext)
 
 
     const [data,setData]=useState({
@@ -29,10 +29,26 @@ const PlaceOrder=()=>{
     }
 
 
+    const placeOrder= async (event: { preventDefault: () => void; })=>{
+        event.preventDefault();
+
+        let orderItems:any=[]
+
+        food_list.map((item:any)=>{
+            if(cartItems[item._id]>0){
+                let itemInfo= item;
+                itemInfo["quantity"]=cartItems[item._id]
+                orderItems.push(itemInfo)
+            }
+        })
+
+        console.log(orderItems)
+    }
+
 
     return(
         <div>
-            <form action="" className={"place-order flex items-start justify-between gap-[15px] mt-[100px]"}>
+            <form onSubmit={placeOrder} action="" className={"place-order flex items-start justify-between gap-[15px] mt-[100px]"}>
                 <div className="placer-order-left">
                     <p className={"title  text-[30px] font-[600] mb-[50px]"}> Delivery Information</p>
                     <div className={"multi-field"}>
@@ -74,7 +90,7 @@ const PlaceOrder=()=>{
 
                         </div>
                         <button
-                            className={"cart-total-button border-none text-white bg-orange-600  mt-[30px]"}>PROCEED To
+                            className={"cart-total-button border-none text-white bg-orange-600  mt-[30px]"} type="submit">PROCEED To
                             PAYMENT
                         </button>
                     </div>
