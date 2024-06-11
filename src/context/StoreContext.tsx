@@ -44,7 +44,7 @@ const StoreContextProvider = ({children}) => {
         for(const item in cartItems){
             let itemInfo= food_list.find((product: { _id: any; })=> product._id === item);
             // @ts-ignore
-            totalAmount=+ itemInfo.price * cartItems[item]
+            totalAmount+= itemInfo.price * cartItems[item]
         }
 
         return totalAmount;
